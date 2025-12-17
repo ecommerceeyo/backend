@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Minimalist Black & White color scheme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    /* Pure black primary */
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 100%;
+    /* Light gray secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    /* Neutral grays */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    /* Black accent */
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 5%;
+    --radius: 0rem;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Shop Theme - Clean white minimalist */
+.shop-theme {
+  background: hsl(0 0% 100%);
+  min-height: 100%;
+}
+
+/* Fashion typography enhancements */
+.fashion-heading {
+  font-family: system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+}
+
+.fashion-subheading {
+  font-family: system-ui, sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+/* Elegant hover effects */
+.fashion-card {
+  transition: all 0.3s ease;
+}
+
+.fashion-card:hover {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Black accent underline */
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background: hsl(0 0% 0%);
+}
+
+/* Admin Theme - Cool, professional slate/blue-gray */
+.admin-theme {
+  background: linear-gradient(135deg,
+    hsl(220 25% 97%) 0%,
+    hsl(215 30% 95%) 50%,
+    hsl(210 25% 94%) 100%
+  );
+  min-height: 100%;
+}
+
+/* Supplier Theme - Professional teal/green-blue */
+.supplier-theme {
+  background: linear-gradient(135deg,
+    hsl(175 25% 97%) 0%,
+    hsl(170 20% 95%) 50%,
+    hsl(165 25% 94%) 100%
+  );
+  min-height: 100%;
+}
+
+/* Dark mode variants */
+.dark .shop-theme {
+  background: hsl(0 0% 5%);
+}
+
+.dark .admin-theme {
+  background: linear-gradient(135deg,
+    hsl(220 40% 7%) 0%,
+    hsl(215 35% 9%) 50%,
+    hsl(210 30% 10%) 100%
+  );
+}
+
+.dark .supplier-theme {
+  background: linear-gradient(135deg,
+    hsl(175 20% 7%) 0%,
+    hsl(170 18% 9%) 50%,
+    hsl(165 15% 10%) 100%
+  );
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Hide scrollbar for elements */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
