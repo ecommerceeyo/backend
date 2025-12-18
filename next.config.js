@@ -14,7 +14,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'mjeytynpoecqeypaiojt.supabase.co',
+        hostname: 'mdywzxpacqwuedrjbhse.supabase.co',
         pathname: '/storage/**',
       },
       {
@@ -35,6 +35,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'placehold.co',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.onrender.com',
         pathname: '/**',
       },
     ],
