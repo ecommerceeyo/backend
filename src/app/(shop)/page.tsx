@@ -75,11 +75,11 @@ function HeroCarousel({ products }: { products: Product[] }) {
 
             <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
               <span className="text-2xl md:text-3xl font-light text-black">
-                {Number(currentProduct.price).toLocaleString()} FCFA
+                {Number(currentProduct.price).toLocaleString()} SZL
               </span>
               {currentProduct.comparePrice && (
                 <span className="text-lg text-gray-400 line-through">
-                  {Number(currentProduct.comparePrice).toLocaleString()} FCFA
+                  {Number(currentProduct.comparePrice).toLocaleString()} SZL
                 </span>
               )}
             </div>

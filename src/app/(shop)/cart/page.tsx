@@ -214,7 +214,7 @@ export default function CartPage() {
                 {deliveryFee > 0 && (
                   <p className="text-xs text-muted-foreground flex items-center gap-1">
                     <Truck className="h-3 w-3" />
-                    Free delivery on orders over 50,000 FCFA
+                    Free delivery on orders over 50,000 SZL
                   </p>
                 )}
                 <Separator />

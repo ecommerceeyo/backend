@@ -6,12 +6,31 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatCurrency(amount: number, currency = 'XAF'): string {
-  return `${amount.toLocaleString()} ${currency}`;
+  const formattedAmount = Math.round(amount).toLocaleString('fr-FR');
+
+  // Map currency codes to symbols
+  const currencySymbols: Record<string, string> = {
+    XAF: 'FCFA',
+    USD: '$',
+    EUR: '€',
+    GBP: '£',
+  };
+
+  const symbol = currencySymbols[currency] || currency;
+
+  // For FCFA, put symbol after the amount
+  if (currency === 'XAF') {
+    return `${formattedAmount} ${symbol}`;
+  }
+
+  // For other currencies, put symbol before the amount
+  return `${symbol}${formattedAmount}`;
 }
 
 export function formatPrice(price: number | string): string {
   const numPrice = typeof price === 'string' ? parseFloat(price) : price;
-  return formatCurrency(numPrice);
+  const currency = process.env.NEXT_PUBLIC_CURRENCY || 'XAF';
+  return formatCurrency(numPrice, currency);
 }
 
 export function truncate(str: string, length: number): string {
