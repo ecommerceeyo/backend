@@ -51,7 +51,7 @@ export function Header() {
       {/* Announcement Bar */}
       <div className="bg-black text-white text-xs">
         <div className="container flex items-center justify-center h-10 gap-4">
-          <span className="tracking-[0.2em] uppercase">Free Shipping on Orders Over 50,000 FCFA</span>
+          <span className="tracking-[0.2em] uppercase">Free Shipping on Orders Over 50,000 SZL</span>
         </div>
       </div>
 
